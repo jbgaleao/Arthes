@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthes.Data", "Arthes.Data\Arthes.Data.csproj", "{0B29B274-3181-4224-B4E4-1C1AC15ED985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthes.Domain", "Arthes.Domain\Arthes.Domain.csproj", "{F27799DC-3452-4EAC-92F5-D78702E97DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthes.Web", "Arthes.Web\Arthes.Web.csproj", "{2DBEFA54-6EA9-4DA4-A580-CD8714E69138}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B29B274-3181-4224-B4E4-1C1AC15ED985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B29B274-3181-4224-B4E4-1C1AC15ED985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B29B274-3181-4224-B4E4-1C1AC15ED985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B29B274-3181-4224-B4E4-1C1AC15ED985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27799DC-3452-4EAC-92F5-D78702E97DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27799DC-3452-4EAC-92F5-D78702E97DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27799DC-3452-4EAC-92F5-D78702E97DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27799DC-3452-4EAC-92F5-D78702E97DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DBEFA54-6EA9-4DA4-A580-CD8714E69138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DBEFA54-6EA9-4DA4-A580-CD8714E69138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DBEFA54-6EA9-4DA4-A580-CD8714E69138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DBEFA54-6EA9-4DA4-A580-CD8714E69138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
