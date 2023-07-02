@@ -1,0 +1,50 @@
+﻿@model Arthes.Domain.Entities.Revista
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Revista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tema)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tema)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumEdicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MesEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MesEdicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnoEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnoEdicao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

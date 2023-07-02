@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Arthes.Domain.Entities.Revista>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumEdicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MesEdicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnoEdicao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumEdicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesEdicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoEdicao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

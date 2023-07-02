@@ -155,6 +155,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RevistasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,10 +219,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Revistas\Create.cshtml" />
+    <Content Include="Views\Revistas\Delete.cshtml" />
+    <Content Include="Views\Revistas\Details.cshtml" />
+    <Content Include="Views\Revistas\Edit.cshtml" />
+    <Content Include="Views\Revistas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -249,6 +255,16 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Arthes.Data\Arthes.Data.csproj">
+      <Project>{0b29b274-3181-4224-b4e4-1c1ac15ed985}</Project>
+      <Name>Arthes.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Arthes.Domain\Arthes.Domain.csproj">
+      <Project>{f27799dc-3452-4eac-92f5-d78702e97dcd}</Project>
+      <Name>Arthes.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
