@@ -4,6 +4,7 @@ namespace Arthes.Domain.Enums
 {
     public enum Mes : int
     {
+        [Display(Name = "Selecione o Mês...")] Vazio = 0,
         Janeiro = 1,
         Fevereiro = 2,
         [Display(Name = "Março")] Marco = 3,
