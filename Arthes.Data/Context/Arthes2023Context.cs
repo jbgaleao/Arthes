@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity;
 
-using Arthes.Data.Initializers;
 using Arthes.Data.Maps;
 using Arthes.Domain.Entities;
 
@@ -10,8 +9,8 @@ namespace Arthes.Data.Context
     {
         public Arthes2023Context() : base("ArthesConn")
         {
-            Database.SetInitializer<Arthes2023Context>(new DropCreateDatabaseAlways<Arthes2023Context>());
-            Database.SetInitializer(new RevistaDBInitializer());
+            //Database.SetInitializer<Arthes2023Context>(new DropCreateDatabaseAlways<Arthes2023Context>());
+            //Database.SetInitializer(new RevistaDBInitializer());
         }
 
         /*-----ENTIDADES-----*/

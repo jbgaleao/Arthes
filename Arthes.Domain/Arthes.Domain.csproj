@@ -91,9 +91,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\RevistaDTO.cs" />
     <Compile Include="Entities\Revista.cs" />
     <Compile Include="Enums\MesEdicao.cs" />
     <Compile Include="Enums\NivelDificuldade.cs" />
+    <Compile Include="Mappers\RevistaMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

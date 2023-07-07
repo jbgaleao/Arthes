@@ -1,4 +1,6 @@
-﻿using Arthes.Domain.Enums;
+﻿using System;
+
+using Arthes.Domain.Enums;
 
 namespace Arthes.Domain.Entities
 {
@@ -9,5 +11,6 @@ namespace Arthes.Domain.Entities
         public int NumEdicao { get; set; }
         public Mes MesEdicao { get; set; }
         public int AnoEdicao { get; set; }
+        public DateTime DataCadastro { get; set; }
     }
 }

@@ -1,10 +1,13 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
 using Arthes.Data.Context;
+using Arthes.Domain.DTO;
 using Arthes.Domain.Entities;
+using Arthes.Domain.Mappers;
 using Arthes.Web.Validators;
 
 using FluentValidation.Results;
@@ -17,7 +20,8 @@ namespace Arthes.Web.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Revistas.ToList());
+            IEnumerable<RevistaDTO> listaRevistaDTO = RevistaMapper.EntidadeParaDTO(db.Revistas.ToList());
+            return View("Index", listaRevistaDTO);
         }
 
         public ActionResult Details(int? id)
@@ -37,10 +41,10 @@ namespace Arthes.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Tema,NumEdicao,MesEdicao,AnoEdicao")] Revista revista)
+        public ActionResult Create([Bind(Include = "Id,Tema,NumEdicao,MesEdicao,AnoEdicao,DataCadastro")] RevistaDTO revistaDTO)
         {
             RevistaValidator rv = new RevistaValidator();
-            ValidationResult result = rv.Validate(revista);
+            ValidationResult result = rv.Validate(revistaDTO);
 
             if (!result.IsValid)
             {
@@ -50,6 +54,8 @@ namespace Arthes.Web.Controllers
                 }
             }
 
+            Revista revista = RevistaMapper.UmDTOParaUmaEntidade(revistaDTO);
+
             if (ModelState.IsValid)
             {
                 _ = db.Revistas.Add(revista);
@@ -57,7 +63,7 @@ namespace Arthes.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(revista);
+            return View(revistaDTO);
         }
 
         public ActionResult Edit(int? id)

@@ -13,8 +13,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-opacity-25 mt-1">
+            <div class="container">
                 <a class="navbar-brand" href="#"> &copy; Arthes</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,29 +22,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="dropdown-item nav-link " aria-current="page" href="@Url.Action("Index", "Home")" title="Home">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Cadastros
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="@Url.Action("Create", "Revistas")" title="Revista">Cadastro de Revistas</a>
+                                @*<hr class="dropdown-divider">*@
+                                <a class="dropdown-item" href="#">Cadastro de Receitas</a>
+                            </div>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Revistas
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Listagens
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-controller="Revistas" asp-action="Index">Lista de Revistas</a></li>
-                                <li><a class="dropdown-item" asp-controller="Revistas" asp-action="Create">Cadastro Nova Revista</a></li>
-                                <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index">Actors</a></li>
-                                <li><a class="dropdown-item" href="#">An action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="@Url.Action("Index", "Revistas")" title="Revista">Lista de Revistas</a>
+                                @*<hr class="dropdown-divider">*@
+                                <a class="dropdown-item" href="#">Lista de Receitas</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li>
+
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,7 +63,7 @@
 
 
         <div class="container">
-            <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
+            <footer class="text-center text-lg-start bg-warning text-muted fixed-bottom">
                 <div class="text-center fst-italic p-4" style="background-color: rgba(0, 0, 0, 0.10);">
                     © 2023 Copyright: Arthes
                 </div>

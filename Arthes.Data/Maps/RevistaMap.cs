@@ -18,6 +18,7 @@ namespace Arthes.Data.Maps
             _ = Property(r => r.NumEdicao).HasColumnName("NUMERO_EDICAO").HasColumnType("int").IsRequired();
             _ = Property(r => r.MesEdicao).HasColumnName("MES_EDICAO").HasColumnType("int").IsRequired();
             _ = Property(r => r.AnoEdicao).HasColumnName("ANO_EDICAO").HasColumnType("int").IsRequired();
+            _ = Property(r => r.DataCadastro).HasColumnName("DATA_CADASTRO").HasColumnType("datetime2").IsRequired();
         }
     }
 }

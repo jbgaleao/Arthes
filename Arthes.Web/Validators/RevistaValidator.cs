@@ -1,10 +1,10 @@
-﻿using Arthes.Domain.Entities;
+﻿using Arthes.Domain.DTO;
 
 using FluentValidation;
 
 namespace Arthes.Web.Validators
 {
-    public class RevistaValidator : AbstractValidator<Revista>
+    public class RevistaValidator : AbstractValidator<RevistaDTO>
     {
         public RevistaValidator()
         {
@@ -25,7 +25,7 @@ namespace Arthes.Web.Validators
             _ = RuleFor(model => model.MesEdicao).NotNull().WithMessage("Campo Obrigatório");
 
             // - ANO DA EDICAO
-            _ = RuleFor(model => model.AnoEdicao).ExclusiveBetween(2018, 2030).WithMessage("Ano da Edição Inválido");
+            _ = RuleFor(model => model.AnoEdicao).InclusiveBetween(2018, 2030).WithMessage("Ano da Edição Inválido");
             _ = RuleFor(model => model.AnoEdicao).NotEmpty().WithMessage("Campo Obrigatório");
             _ = RuleFor(model => model.AnoEdicao).NotNull().WithMessage("Campo Obrigatório");
         }

@@ -1,57 +1,71 @@
-﻿@model Arthes.Domain.Entities.Revista
+﻿@model Arthes.Domain.DTO.RevistaDTO
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 @{
     ViewBag.Title = "Nova Revista";
 }
 
-<h2 class="display-6">Cadastro de Nova Revista</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        
-        <hr />
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Tema, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Tema, new { htmlAttributes = new { @class = "form-control" } })
-                <small class="fst-italic">
-                    @Html.ValidationMessageFor(model => model.Tema, "", new { @class = "text-danger" })
-                </small>
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumEdicao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumEdicao, new { htmlAttributes = new { @class = "form-control" } })
-                <small class="fst-italic">
-                    @Html.ValidationMessageFor(model => model.NumEdicao, "", new { @class = "text-danger" })
-                </small>
-            </div>
-        </div>
+        <div class="container mt-4">
+            <h2 class="display-6 mt-4">Cadastro de Nova Revista</h2>
+            <hr />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MesEdicao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.MesEdicao, htmlAttributes: new { @class = "form-control" })
-                <small class="fst-italic">
-                    @Html.ValidationMessageFor(model => model.MesEdicao, "", new { @class = "text-danger" })
-                </small>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div>
+                        <label class="fs-6 fst-italic text-secondary fw-bold">Tema</label>
+                        @*@Html.LabelFor(model => model.Tema, htmlAttributes: new { @class = "fs-6 fst-italic text-secondary fw-bold" })*@
+                    </div>
+                    <input type="text" class="form-control" placeholder="kjhkjhkjh" />
+                    <small class="fst-italic">
+                        @Html.ValidationMessageFor(model => model.Tema, "", new { @class = "text-danger" })
+                    </small>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AnoEdicao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AnoEdicao, new { htmlAttributes = new { @class = "form-control" } })
-                <small class="fst-italic">
-                    @Html.ValidationMessageFor(model => model.AnoEdicao, "", new { @class = "text-danger" })
-                </small>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NumEdicao, htmlAttributes: new { @class = "fs-6 fst-italic text-secondary fw-bold" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NumEdicao, new { htmlAttributes = new { @class = "form-control" } })
+                            <small class="fst-italic">
+                                @Html.ValidationMessageFor(model => model.NumEdicao, "", new { @class = "text-danger" })
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MesEdicao, htmlAttributes: new { @class = "fs-6 fst-italic text-secondary fw-bold" })
+                        <div class="col-md-10">
+                            @Html.EnumDropDownListFor(model => model.MesEdicao, htmlAttributes: new { @class = "form-control" })
+                            <small class="fst-italic">
+                                @Html.ValidationMessageFor(model => model.MesEdicao, "", new { @class = "text-danger" })
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AnoEdicao, htmlAttributes: new { @class = "fs-6 fst-italic text-secondary fw-bold" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AnoEdicao, new { htmlAttributes = new { @class = "form-control" } })
+                            <small class="fst-italic">
+                                @Html.ValidationMessageFor(model => model.AnoEdicao, "", new { @class = "text-danger" })
+                            </small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -60,13 +74,31 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+
+    }
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
